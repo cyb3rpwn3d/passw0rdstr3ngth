@@ -1,0 +1,57 @@
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.until.regex.Pattern;
+
+// Hello! This is a simple Java program I've created to check the strength or weaknesses of a inputted password.
+// The program provides feedback and a ranking from Very Weak, Weak, Moderate, Strong, and Very Strong.
+// Feedback also includes recommendations of length, upper/lowercase letters, numbers, and special characters.
+// NO DATA FROM ENTRIES IS SAVED
+
+public class passw0rdstr3ngth {
+
+    public static void main(String[] args) {
+
+        // Create scanner to read user input
+
+        Scanner scanner = new Scanner(System.in);
+        String password
+
+        // Print welcome text to display to user.
+
+        System.out.println("======================================")
+        System.out.println("   Java Password Strength Checker     ");
+        System.out.println("======================================");
+        System.out.println("Enter a password to analyze its strength.");
+        System.out.println("    Type 'exit' to quit the program.    ");
+
+        // Loop to prompt for passwords until user types 'exit'.
+
+        while (true) {
+    
+            System.out.print("\Enter password: ");
+            password = scanner.nextLine();
+
+             // Look for the exit command.
+
+            if (password.equalsIgnoreCase("exit")) {
+                System.out.println("Exiting program. Stay secure!");
+                break;
+            }
+
+            // Make sure the password input is not empty.
+
+            if (password.isEmpty()) {
+                System.out.println("Password cannot be empty. Please try again.");
+                continue;
+            }
+
+            // Call the analysis method.
+
+            analyzePassword(password);
+        }
+
+        // Close the scanner
+
+        scanner.close();
+    }
+
